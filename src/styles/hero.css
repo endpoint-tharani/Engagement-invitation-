@@ -1,0 +1,190 @@
+/* ───────────────────────── Hero invitation card ───────────────────────── */
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: clamp(64px, 11vh, 110px) var(--gutter) clamp(104px, 14vh, 140px);
+  overflow: hidden;
+  overflow: clip;
+}
+
+.hero__stage {
+  --card-w: min(500px, 100vw - 2 * var(--gutter));
+  position: relative;
+  width: var(--card-w);
+}
+
+/* Arched card: a true semicircle on top, softly squared at the base */
+.hero__card {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: calc(var(--card-w) * 0.19) clamp(22px, 7vw, 56px) clamp(44px, 9vw, 64px);
+  text-align: center;
+  background-color: var(--paper);
+  background-image: var(--texture);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--card-w) / 2) calc(var(--card-w) / 2) 6px 6px;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero__card::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid var(--line-soft);
+  border-radius: calc(var(--card-w) / 2 - 8px) calc(var(--card-w) / 2 - 8px) 3px 3px;
+  pointer-events: none;
+}
+
+.hero__sprig {
+  width: clamp(120px, 34vw, 170px);
+  margin-bottom: 4px;
+}
+
+.hero__names {
+  display: grid;
+  justify-items: center;
+  margin: 4px 0 2px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.hero__name {
+  font-family: var(--font-script);
+  font-size: clamp(3.1rem, 14vw, 5.2rem);
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.hero__amp {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--gold);
+}
+
+.hero__line {
+  max-width: 24ch;
+  font-size: clamp(1.15rem, 4.6vw, 1.35rem);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+.hero__line--small {
+  margin-top: -4px;
+  font-size: 1.05rem;
+}
+
+.hero__event {
+  margin-top: 2px;
+  font-size: clamp(1.1rem, 4.6vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  color: var(--olive);
+  padding-left: 0.22em;
+}
+
+.hero__divider {
+  width: 150px;
+  margin: 10px 0 6px;
+}
+
+.hero__date {
+  font-size: clamp(1.3rem, 5vw, 1.6rem);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+}
+
+.hero__time {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-left: 0.3em;
+}
+
+.hero__decor {
+  position: absolute;
+  z-index: 2;
+  width: clamp(150px, 42vw, 290px);
+  pointer-events: none;
+}
+
+.hero__decor--tl {
+  top: calc(var(--card-w) * 0.02);
+  left: calc(var(--card-w) * -0.16);
+}
+
+.hero__decor--br {
+  right: calc(var(--card-w) * -0.16);
+  bottom: -36px;
+}
+
+.hero__decor--br .sway {
+  --origin: 100% 100%;
+}
+
+.hero__decor--br .decor {
+  transform: scale(-1);
+}
+
+/* Scroll cue */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: calc(22px + var(--safe-bottom));
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  translate: -50% 0;
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-left: 0.32em;
+}
+
+.scroll-cue i {
+  position: relative;
+  width: 1px;
+  height: 40px;
+  overflow: hidden;
+  background: linear-gradient(var(--line), transparent);
+}
+
+.scroll-cue i::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: 0;
+  width: 1px;
+  height: 40%;
+  background: var(--olive);
+  animation: scroll-cue 2.8s var(--ease) infinite;
+}
+
+@keyframes scroll-cue {
+  to {
+    top: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero .eyebrow {
+    letter-spacing: 0.26em;
+  }
+}
