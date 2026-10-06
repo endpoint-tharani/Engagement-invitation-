@@ -42,7 +42,7 @@ export function Countdown() {
                       initial={{ opacity: 0, y: "-35%" }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: "35%" }}
-                      transition={{ duration: 0.7, ease: EASE }}
+                      transition={{ duration: 0.5, ease: EASE }}
                     >
                       {pad(value)}
                     </motion.span>

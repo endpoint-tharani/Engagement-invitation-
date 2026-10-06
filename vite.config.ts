@@ -1,7 +1,7 @@
 import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react";
 import { imagetools } from "vite-imagetools";
-import { invitation } from "./src/data/invitation";
+import { invitation } from "./src/data/invitation.ts";
 
 const escapeHtml = (value: string) =>
   value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

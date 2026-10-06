@@ -1,4 +1,4 @@
-import { useMemo, useState, type SyntheticEvent } from "react";
+import { useMemo, useRef, useState, type SyntheticEvent } from "react";
 import { motion } from "framer-motion";
 import { invitation, type GalleryLayout } from "../data/invitation";
 import { getImage } from "../lib/images";
@@ -20,6 +20,13 @@ const markLoaded = (event: SyntheticEvent<HTMLImageElement>) => event.currentTar
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+  const items = useRef<(HTMLButtonElement | null)[]>([]);
+
+  // On close, return focus to the photo last viewed (Safari never focuses clicked buttons).
+  const changePhoto = (index: number | null) => {
+    if (index === null && active !== null) items.current[active]?.focus({ preventScroll: true });
+    setActive(index);
+  };
 
   const photos = useMemo<Photo[]>(
     () =>
@@ -41,6 +48,9 @@ export function Gallery() {
           <motion.button
             type="button"
             key={photo.file}
+            ref={(button) => {
+              items.current[i] = button;
+            }}
             className={`gallery__item gallery__item--${photo.layout}`}
             onClick={() => setActive(i)}
             aria-label={`View photo: ${photo.alt}`}
@@ -77,7 +87,7 @@ export function Gallery() {
         ))}
       </div>
 
-      <Lightbox photos={photos} index={active} onChange={setActive} />
+      <Lightbox photos={photos} index={active} onChange={changePhoto} />
     </section>
   );
 }

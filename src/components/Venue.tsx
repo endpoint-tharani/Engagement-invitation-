@@ -61,16 +61,6 @@ export function Venue() {
           <motion.div className="venue__divider" variants={fadeUp}>
             <OrnamentDivider />
           </motion.div>
-          <motion.div className="venue__actions" variants={fadeUp}>
-            <a className="btn btn--solid" href={maps.directions} target="_blank" rel="noopener noreferrer">
-              <Navigation size={16} strokeWidth={1.25} aria-hidden="true" />
-              Get Directions
-            </a>
-            <a className="btn" href={maps.open} target="_blank" rel="noopener noreferrer">
-              <ExternalLink size={16} strokeWidth={1.25} aria-hidden="true" />
-              Open in Google Maps
-            </a>
-          </motion.div>
         </motion.div>
 
         <motion.div
@@ -93,6 +83,23 @@ export function Venue() {
               <MapPreview label={event.venue} />
             )}
           </div>
+        </motion.div>
+
+        <motion.div
+          className="venue__actions"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={VIEWPORT}
+          transition={{ duration: 1.2, delay: 0.2, ease: EASE }}
+        >
+          <a className="btn btn--solid" href={maps.directions} target="_blank" rel="noopener noreferrer">
+            <Navigation size={16} strokeWidth={1.25} aria-hidden="true" />
+            Get Directions
+          </a>
+          <a className="btn" href={maps.open} target="_blank" rel="noopener noreferrer">
+            <ExternalLink size={16} strokeWidth={1.25} aria-hidden="true" />
+            Open in Google Maps
+          </a>
         </motion.div>
       </div>
     </section>

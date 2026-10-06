@@ -37,12 +37,9 @@ export function Lightbox({ photos, index, onChange }: Props) {
     [index, photos.length, onChange],
   );
 
-  // Move focus into the viewer, and back to the photo that opened it.
+  // Move focus into the viewer (the gallery returns it on close).
   useEffect(() => {
-    if (!open) return;
-    const trigger = document.activeElement as HTMLElement | null;
-    closeRef.current?.focus();
-    return () => trigger?.focus();
+    if (open) closeRef.current?.focus();
   }, [open]);
 
   useEffect(() => {

@@ -25,13 +25,13 @@
 .opening__door--left {
   left: 0;
   transform-origin: left center;
-  box-shadow: inset -22px 0 34px -30px rgba(74, 60, 34, 0.45);
+  box-shadow: inset -18px 0 30px -28px rgba(74, 60, 34, 0.28);
 }
 
 .opening__door--right {
   right: 0;
   transform-origin: right center;
-  box-shadow: inset 22px 0 34px -30px rgba(74, 60, 34, 0.45);
+  box-shadow: inset 18px 0 30px -28px rgba(74, 60, 34, 0.28);
 }
 
 /* Double gold frame that reads as one border across both doors */
@@ -68,7 +68,7 @@
 
 .opening__spray {
   position: absolute;
-  width: clamp(150px, 40vw, 300px);
+  width: clamp(170px, 50vw, 340px);
 }
 
 .opening__spray--tl {
@@ -84,7 +84,7 @@
 
 .opening__spray--tr,
 .opening__spray--bl {
-  width: clamp(100px, 26vw, 200px);
+  width: clamp(110px, 30vw, 220px);
   opacity: 0.85;
 }
 

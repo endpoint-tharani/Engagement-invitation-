@@ -175,17 +175,21 @@ interface DecorProps {
 export function CornerSpray({ className = "", style }: DecorProps) {
   return (
     <svg className={`decor ${className}`} style={style} viewBox="0 0 300 300" aria-hidden="true" focusable="false">
-      <Branch from={[0, 0]} to={[196, 186]} bend={14} leaves={8} size={28} seed={11} tone="light" />
-      <Branch from={[6, 16]} to={[226, 126]} bend={28} leaves={7} size={19} seed={5} tone="gold" noTip />
-      <Branch from={[-8, 34]} to={[268, 66]} bend={24} leaves={11} size={38} olives={2} seed={3} />
-      <Branch from={[30, -8]} to={[62, 264]} bend={-22} leaves={10} size={36} olives={1} seed={7} />
-      <Bud x={164} y={52} rotate={58} s={0.9} />
-      <Bud x={92} y={170} rotate={146} s={0.8} />
-      <Blossom x={68} y={60} r={10} rotate={12} />
-      <Blossom x={116} y={44} r={6.5} rotate={40} />
-      <Blossom x={46} y={110} r={7.5} rotate={-8} />
-      <Blossom x={140} y={104} r={5} rotate={22} />
-      <Dots points={[[95, 80, 2.2], [104, 89, 1.5], [88, 95, 1.7], [176, 70, 1.6], [62, 150, 1.8], [204, 40, 1.4], [132, 136, 1.5], [24, 190, 1.3]]} />
+      <Branch from={[0, 0]} to={[206, 196]} bend={14} leaves={10} size={34} seed={11} tone="light" />
+      <Branch from={[12, -6]} to={[290, 22]} bend={20} leaves={9} size={30} seed={13} tone="light" />
+      <Branch from={[6, 16]} to={[236, 132]} bend={28} leaves={8} size={21} seed={5} tone="gold" noTip />
+      <Branch from={[-8, 34]} to={[280, 70]} bend={26} leaves={14} size={44} olives={2} seed={3} />
+      <Branch from={[30, -8]} to={[66, 280]} bend={-24} leaves={13} size={42} olives={2} seed={7} />
+      <Branch from={[14, 22]} to={[150, 128]} bend={-10} leaves={7} size={32} seed={17} />
+      <Bud x={170} y={56} rotate={58} s={1} />
+      <Bud x={96} y={178} rotate={146} s={0.9} />
+      <Bud x={214} y={92} rotate={70} s={0.75} />
+      <Blossom x={70} y={62} r={12} rotate={12} />
+      <Blossom x={120} y={44} r={7.5} rotate={40} />
+      <Blossom x={46} y={114} r={9} rotate={-8} />
+      <Blossom x={146} y={108} r={6} rotate={22} />
+      <Blossom x={96} y={92} r={4.5} rotate={50} />
+      <Dots points={[[100, 76, 2.2], [110, 70, 1.5], [84, 98, 1.7], [182, 74, 1.6], [62, 156, 1.8], [210, 40, 1.4], [138, 140, 1.5], [24, 200, 1.3], [240, 60, 1.2]]} />
     </svg>
   );
 }

@@ -73,6 +73,7 @@
 
 .hero__line {
   max-width: 24ch;
+  text-wrap: balance;
   font-size: clamp(1.15rem, 4.6vw, 1.35rem);
   font-style: italic;
   line-height: 1.4;
@@ -119,7 +120,7 @@
 .hero__decor {
   position: absolute;
   z-index: 2;
-  width: clamp(150px, 42vw, 290px);
+  width: clamp(170px, 48vw, 320px);
   pointer-events: none;
 }
 
